@@ -6,7 +6,7 @@
 #    By: jhille <marvin@codam.nl>                     +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/29 16:15:51 by jhille        #+#    #+#                  #
-#    Updated: 2021/02/14 17:51:38 by jhille        ########   odam.nl          #
+#    Updated: 2021/03/28 12:29:05 by jhille        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,13 @@ REG_FILES = ft_atoi.c\
 		   	ft_tolower.c\
 		   	ft_toupper.c\
 			ft_resetptr.c
+
+GNL_SRC = get_next_line_bonus.c\
+		get_next_line_utils_bonus.c
+GNL_DIR = gnl/
+GNL_OBJ = $(GNL_SRC:.c=.o)
+
+
 BONUS_FILES = ft_lstadd_back.c\
 			  ft_lstadd_front.c\
 			  ft_lstclear.c\
@@ -57,13 +64,18 @@ BONUS_FILES = ft_lstadd_back.c\
 			  ft_lstmap.c\
 			  ft_lstnew.c\
 			  ft_lstsize.c
+
+VPATH = $(GNL_DIR)
+
 CFLAGS = -Wextra -Wall -Werror
-REG_OBJ_FILES = $(REG_FILES:.c=.o)
+
+REG_OBJ_FILES = $(REG_FILES:.c=.o) $(GNL_OBJ)
 BONUS_OBJ_FILES = $(BONUS_FILES:.c=.o)
+
 ifdef WITH_BONUS
-OBJ_FILES = $(REG_OBJ_FILES) $(BONUS_OBJ_FILES)
+ OBJ_FILES = $(REG_OBJ_FILES) $(BONUS_OBJ_FILES)
 else
-OBJ_FILES = $(REG_OBJ_FILES)
+ OBJ_FILES = $(REG_OBJ_FILES)
 endif
 
 all: $(NAME)
