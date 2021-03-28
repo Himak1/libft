@@ -1,2 +1,3 @@
 # libft
-C library with a variety of commonly needed utility functions. Most are based on exisiting functions from a variety of different C libraries, some were specified by The 42 Network's curriculum and the remaining functions are functions I personally found useful for the development of bigger functions.
+C library with my own implementations of C Standard Library functions (libc). Most functions were specified by The 42 Network's curriculum
+. The remainder are functions I wrote and added to the library because I deemed them to be useful during the development of bigger projects.
